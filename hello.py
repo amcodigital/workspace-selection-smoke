@@ -1,5 +1,5 @@
 def main() -> None:
-    print("workspace-selection-smoke")
+    print("hello from workspace-selection-smoke")
 
 
 if __name__ == "__main__":
