@@ -1,0 +1,9 @@
+# Changes here are managed by Copier; NEVER EDIT MANUALLY.
+_commit: v0.1.0
+_src_path: https://github.com/amcodigital/dev-dotfiles.git
+agent_clients:
+- codex
+- claude
+project_description: Public workspace selection canary
+project_slug: workspace-selection-smoke
+runtime_preset: python

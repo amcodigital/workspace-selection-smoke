@@ -1,0 +1,11 @@
+[settings]
+lockfile = true
+locked = true
+lockfile_platforms = ["linux-x64", "macos-arm64"]
+
+[tools]
+
+python = "3.13.14"
+uv = "0.11.29"
+
+

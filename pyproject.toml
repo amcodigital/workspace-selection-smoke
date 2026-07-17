@@ -1,0 +1,9 @@
+[project]
+name = "workspace-selection-smoke"
+version = "0.1.0"
+description = "Public workspace selection canary"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv]
+package = false
