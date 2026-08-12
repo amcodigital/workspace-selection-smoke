@@ -1,0 +1,31 @@
+# Sync this repository into the AMCO coding brain as a source.
+#
+# One brain, one source per repo (owner decision F18). Cross-source search is
+# federated, so a question asked here reaches every other AMCO repo's knowledge.
+#
+# Logic lives in amco-brain; this is a caller. Requires one secret:
+# DOPPLER_TOKEN, a read-only Doppler service token scoped to amco-brain/prd.
+# The database URL never leaves Doppler.
+#
+# Read-only with respect to this repo: it checks out markdown and syncs it into
+# the brain. It never writes here.
+name: brain-sync
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "29 * * * *"
+
+concurrency:
+  group: brain-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    uses: amcodigital/amco-brain/.github/workflows/brain-sync-reusable.yml@main
+    with:
+      source: workspace-selection-smoke
+    secrets:
+      DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
